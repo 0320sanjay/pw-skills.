@@ -1,0 +1,74 @@
+Q1. What is Abstraction in OOps? Explain with an example.
+
+ans:-Data abstraction is one of the most essential concepts of Python OOPs which is used to hide irrelevant details from the user and show the details that are relevant to the users. example;-
+# Import required modules 
+from abc import ABC, abstractmethod 
+
+# Create Abstract base class 
+class Car(ABC): 
+def __init__(self, brand, model, year): 
+	self.brand = brand 
+	self.model = model 
+	self.year = year 
+	
+# Create abstract method	 
+@abstractmethod
+def printDetails(self): 
+	pass
+	
+# Create concrete method 
+def accelerate(self): 
+	print("speed up ...") 
+	
+def break_applied(self): 
+	print("Car stop") 
+	
+# Create a child class 
+class Hatchback(Car): 
+	
+def printDetails(self): 
+	print("Brand:", self.brand); 
+	print("Model:", self.model); 
+	print("Year:", self.year); 
+	
+def Sunroof(self): 
+	print("Not having this feature") 
+	
+# Create a child class 
+class Suv(Car): 
+	
+def printDetails(self): 
+	print("Brand:", self.brand); 
+	print("Model:", self.model); 
+	print("Year:", self.year); 
+	
+def Sunroof(self): 
+	print("Available") 
+
+	
+car1 = Hatchback("Maruti", "Alto", "2022"); 
+
+car1.printDetails() 
+car1.accelerate() 
+	
+
+Q2. Differentiate between Abstraction and Encapsulation. Explain with an example.
+
+ans:-Abstraction is defined as a process of hiding the implementation details of a system from the user. Thus, by using abstraction, we provided only the functionality of the system to the user. Consequently, the user will have information on what the system does, but not on how the system does it.
+
+For example, when we consider the case of a search on google, complex details such as what happens as soon as we search about a query, the protocol our web server uses are hidden. Therefore, to make a search on google we just need to type the query, and click on the search button.
+
+Encapsulation is one of the fundamental OOP concepts. Encapsulation is defined as a method by which data wrapping is done into a single unit. It is used in wrapping up the data and the code acting on the data together as a single unit. 
+for example:-A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc. The goal of information hiding is to ensure that an object’s state is always valid by controlling access to attributes that are hidden from the outside world.
+
+Q3. What is abc module in python? Why is it used?
+
+ans:-The main goal of the abstract base class is to provide a standardized way to test whether an object adheres to a given specification. It can also prevent any attempt to instantiate a subclass that doesn’t override a particular method in the superclass. And finally, using an abstract class, a class can derive identity from another class without any object inheritance.
+
+Q4. How can we achieve data abstraction?
+
+ans:-Data abstraction is the process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with either abstract classes or interfaces.
+
+Q5. Can we create an instance of an abstract class? Explain your answer?
+
+ans:-Abstract classes cannot be instantiated, but they can be subclassed. When an abstract class is subclassed, the subclass usually provides implementations for all of the abstract methods in its parent class.
